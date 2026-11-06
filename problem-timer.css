@@ -1,0 +1,33 @@
+.problem-timer-toggle {
+  min-height:34px; padding:0 12px; border:1px solid rgba(255,255,255,.10); border-radius:999px;
+  color:var(--muted); font:inherit; font-size:.76rem; font-variant-numeric:tabular-nums;
+  background:rgba(255,255,255,.035); cursor:pointer; white-space:nowrap;
+}
+.problem-timer-toggle:hover, .problem-timer-toggle.is-running {
+  color:var(--ink); border-color:rgba(var(--accent-rgb),.42); background:rgba(var(--accent-rgb),.09);
+}
+.problem-timer-toggle.is-done { color:#ffe2ac; border-color:rgba(255,194,112,.5); }
+.problem-timer-backdrop { position:fixed; inset:0; z-index:40; display:grid; place-items:center; padding:22px; background:rgba(0,0,0,.66); backdrop-filter:blur(12px); }
+.problem-timer-card { width:min(470px,100%); padding:27px; border:1px solid rgba(var(--accent-rgb),.3); border-radius:24px; background:rgba(6,17,30,.98); box-shadow:0 28px 90px rgba(0,0,0,.6); }
+.problem-timer-head { display:flex; align-items:flex-start; justify-content:space-between; gap:18px; }
+.problem-timer-kicker { margin:0 0 5px; color:var(--accent); font-size:.63rem; letter-spacing:.22em; }
+.problem-timer-card h2 { margin:0; font-size:1.35rem; }
+.problem-timer-close { width:34px; height:34px; padding:0; border:1px solid rgba(255,255,255,.12); border-radius:50%; color:var(--muted); background:rgba(255,255,255,.04); font-size:1.15rem; cursor:pointer; }
+.problem-timer-display { margin:28px 0 5px; color:var(--ink); font:650 clamp(3.5rem,12vw,5.4rem)/1 ui-monospace,"Cascadia Mono",Consolas,monospace; font-variant-numeric:tabular-nums; letter-spacing:-.07em; text-align:center; }
+.problem-timer-status { min-height:1.5em; margin:0 0 22px; color:var(--muted); font-size:.8rem; text-align:center; }
+.problem-timer-presets { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; margin-bottom:14px; }
+.problem-timer-preset { min-height:36px; border:1px solid rgba(255,255,255,.1); border-radius:10px; color:var(--muted); background:rgba(255,255,255,.035); cursor:pointer; }
+.problem-timer-preset.is-selected { color:var(--ink); border-color:rgba(var(--accent-rgb),.5); background:rgba(var(--accent-rgb),.1); }
+.problem-timer-field { display:grid; grid-template-columns:1fr 112px; align-items:center; gap:12px; margin:10px 0 15px; color:var(--muted); font-size:.8rem; }
+.problem-timer-field input { width:100%; height:40px; padding:0 10px; border:1px solid rgba(255,255,255,.13); border-radius:10px; color:var(--ink); background:rgba(255,255,255,.055); font:inherit; user-select:text; -webkit-app-region:no-drag; }
+.problem-timer-field input:focus { outline:2px solid rgba(var(--accent-rgb),.55); outline-offset:2px; border-color:rgba(var(--accent-rgb),.65); }
+.problem-timer-field input::-webkit-inner-spin-button, .problem-timer-field input::-webkit-outer-spin-button { -webkit-appearance:none; margin:0; }
+.problem-timer-actions { display:grid; grid-template-columns:1fr auto auto; gap:8px; }
+.problem-timer-action { min-height:43px; padding:0 15px; border:1px solid rgba(255,255,255,.12); border-radius:11px; color:var(--ink); background:rgba(255,255,255,.045); font:inherit; cursor:pointer; }
+.problem-timer-action.primary { border-color:rgba(var(--accent-rgb),.5); background:rgba(var(--accent-rgb),.13); }
+.problem-timer-card.is-done { border-color:rgba(255,194,112,.5); }
+.problem-timer-card.is-done .problem-timer-display { color:#ffe2ac; animation:problem-done .9s ease-in-out 2; }
+@keyframes problem-done { 50% { transform:scale(1.025); text-shadow:0 0 30px rgba(255,194,112,.35); } }
+@media (max-width:720px) { .problem-timer-toggle { padding:0 9px; font-size:.69rem; } .problem-timer-card { padding:22px; } }
+@media (prefers-reduced-motion:reduce) { .problem-timer-card.is-done .problem-timer-display { animation:none; } }
+
