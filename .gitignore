@@ -1,0 +1,16 @@
+# Local recovery and user data
+recovered-backup.json
+migration.js
+*.local.json
+browser-profile/
+user-data/
+media/
+
+# Generated previews
+*-preview.png
+
+# OS/editor files
+Thumbs.db
+.DS_Store
+.vscode/
+
